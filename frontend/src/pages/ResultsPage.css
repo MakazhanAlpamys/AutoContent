@@ -1,0 +1,243 @@
+.results-page {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+.results-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.results-header h1 {
+  color: var(--primary-dark);
+  margin-bottom: 1rem;
+  font-size: 2.5rem;
+}
+
+.results-header p {
+  color: #555;
+  font-size: 1.1rem;
+}
+
+/* Информация о видео */
+.video-info-container {
+  margin-bottom: 3rem;
+}
+
+.video-info-container h2 {
+  color: var(--primary-dark);
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.video-info-card {
+  background: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  padding: 2rem;
+}
+
+.video-info-section {
+  margin-bottom: 2rem;
+}
+
+.video-info-section:last-child {
+  margin-bottom: 0;
+}
+
+.video-info-section h3 {
+  color: var(--primary-color);
+  margin-bottom: 0.8rem;
+  font-size: 1.3rem;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.5rem;
+}
+
+.video-info-section p {
+  color: #444;
+  line-height: 1.6;
+}
+
+/* Хэштеги */
+.hashtags-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.hashtag {
+  background: var(--primary-light);
+  color: var(--primary-dark);
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: var(--transition);
+}
+
+.hashtag:hover {
+  background: var(--primary-color);
+  color: white;
+}
+
+/* Контент план */
+.content-plan {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.content-plan-item {
+  display: flex;
+  border-left: 3px solid var(--primary-color);
+  padding-left: 1rem;
+  background: #f9f9f9;
+  border-radius: 4px;
+}
+
+.content-plan-date {
+  min-width: 150px;
+  font-weight: 600;
+  color: var(--primary-dark);
+  padding: 1rem 1rem 1rem 0;
+}
+
+.content-plan-content {
+  padding: 1rem 1rem 1rem 0;
+  flex-grow: 1;
+  color: #444;
+}
+
+/* Загрузка */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 0;
+}
+
+.loading-spinner {
+  border: 5px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  border-top: 5px solid var(--primary-color);
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1.5rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Ошибка */
+.error-container, .empty-container {
+  text-align: center;
+  padding: 3rem 0;
+}
+
+.error-icon, .empty-icon {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.error-icon {
+  color: var(--error-color);
+}
+
+.empty-icon {
+  color: #888;
+}
+
+.error-container p, .empty-container p {
+  margin-bottom: 2rem;
+  color: #555;
+}
+
+/* Контейнер с клипами */
+.clips-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.clip-card {
+  background: white;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--box-shadow);
+  transition: var(--transition);
+  position: relative;
+}
+
+.clip-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.clip-number {
+  background: var(--primary-color);
+  color: white;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+}
+
+.clip-preview {
+  position: relative;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio */
+}
+
+.clip-preview video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.clip-actions {
+  padding: 1rem;
+  text-align: center;
+}
+
+/* Футер */
+.results-footer {
+  text-align: center;
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid #eee;
+}
+
+.results-footer p {
+  margin-bottom: 1.5rem;
+  color: #555;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .results-page {
+    padding: 1rem;
+  }
+  
+  .results-header h1 {
+    font-size: 2rem;
+  }
+  
+  .clips-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .content-plan-item {
+    flex-direction: column;
+  }
+  
+  .content-plan-date {
+    padding-bottom: 0.2rem;
+  }
+} 
